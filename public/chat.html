@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WEB-CHAT</title>
+  </head>
+  <link rel="stylesheet" href="./css/chat.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+  />
+  <body>
+    <div style="margin-top: 10%;" class="ui container">
+      <div class="ui placeholder segment">
+        <div class="ui two column very relaxed stackable grid">
+          <div class="column">
+            <div class="ui form">
+              <div class="field">
+                <h2 class="ui center aligned icon header">
+                  <i class="circular users icon"></i>
+                  Usuarios Online
+                </h2>
+                <div class="ui form">
+                  <div class="field">
+                    <ul id="menu"></ul>
+                    <div class="ui middle aligned divided list"></div>
+                  </div>
+                </div>
+                <div class="ui left icon input">
+                  <input
+                    id="nameInput"
+                    type="text"
+                    placeholder="Mudar nome do usuario"
+                  />
+                  <i class="user icon"></i>
+                </div>
+              </div>
+            </div>
+            <div
+            
+              style="margin-top: 3%"
+              id="buttonChangeName"
+              class="ui black submit button inverted secondary button"
+            >
+              Trocar
+            </div>
+          </div>
+          <div class="middle aligned column">
+            <h2 class="ui center aligned icon header">Mensagens</h2>
+
+            <div class="ui inverted segment">
+              <div id="menu" class="ui inverted relaxed divided list">
+                <div id="messages" class="item"></div>
+              </div>
+            </div>
+            <ul id="messages"></ul>
+            <form action="">
+              <div class="ui fluid icon input">
+                <input id="messageInput" type="text" placeholder="..." />
+              </div>
+              <button
+                class="ui animated fade button inverted secondary button"
+                tabindex="0"
+                style="margin-top: 3%"
+              >
+                <div class="visible content">Enviar Mensagem</div>
+                <div class="hidden content">Tem certeza ??</div>
+              </button>
+            </form>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+  </body>
+</html>
